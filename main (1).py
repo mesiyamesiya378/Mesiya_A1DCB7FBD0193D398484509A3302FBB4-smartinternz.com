@@ -1,13 +1,28 @@
-
-year=int(input("Enter the Year:"))
-  
+class Bank_Account:
+    def __init__(self):
+        self.balance=0
+        print("Hello!!! Welcome to the Deposit & Withdrawal Machine")
  
-if(year % 400==0and year % 100!=0) or year %4==0:
+    def deposit(self):
+        amount=float(input("Enter amount to be Deposited: "))
+        self.balance += amount
+        print("\n Amount Deposited:",amount)
+ 
+    def withdraw(self):
+        amount = float(input("Enter amount to be Withdrawn: "))
+        if self.balance>=amount:
+            self.balance-=amount
+            print("\n You Withdrew:", amount)
+        else:
+            print("\n Insufficient balance  ")
+ 
+    def display(self):
+        print("\n Net Available Balance=",self.balance)
+ 
+
+s = Bank_Account()
   
-  print("Given year is Leap year")
-else:
-  
-  print("Given year is not a Leap year")
-  
-  
-  
+
+s.deposit()
+s.withdraw()
+s.display()
